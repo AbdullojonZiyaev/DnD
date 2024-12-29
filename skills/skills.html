@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills by Level and Class</title>
+    <style>
+         header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .filter-container {
+            margin: 20px 0;
+        }
+        .filter-container select {
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        .skill-card {
+            background-color: black;
+            opacity: 0.7;
+            color: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .skill-card h3 {
+            font-size: 20px;
+            margin: 0;
+        }
+        .skill-card p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+    <header>
+        <div class="logo">Game Builder</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Races</a></li>
+                <li><a href="../classes.html">Classes</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="../mechanics.html">Mechanics</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="filter-container">
+        <label for="class-filter">Filter by Class: </label>
+        <select id="class-filter">
+            <option value="all">All Classes</option>
+            <option value="Blademaster">Blademaster</option>
+            <option value="Ranger">Ranger</option>
+            <option value="Barbarian">Barbarian</option>
+            <option value="Duelist">Duelist</option>
+            <option value="Berserker">Berserker</option>
+            <option value="Elementalist">Elementalist</option>
+            <option value="Necromancer">Necromancer</option>
+            <option value="Sorcerer">Sorcerer</option>
+            <option value="Illusionist">Illusionist</option>
+            <option value="Arcane Knight">Arcane Knight</option>
+            <option value="Shieldbearer">Shieldbearer</option>
+            <option value="Warden">Warden</option>
+            <option value="Ironclad">Ironclad</option>
+            <option value="Sentinel">Sentinel</option>
+            <option value="Blood Knight">Blood Knight</option>
+            <option value="Chronomancer">Chronomancer</option>
+            <option value="Spellblade">Spellblade</option>
+            <option value="Phantom">Phantom</option>
+            <option value="Soulbinder">Soulbinder</option>
+            <option value="Runesmith">Runesmith</option>
+        </select>
+        
+
+        <label for="level-filter">Filter by Level: </label>
+        <select id="level-filter">
+            <option value="all">All Levels</option>
+            <option value="1">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+            <option value="4">Level 4</option>
+            <option value="5">Level 5</option>
+        </select>
+    </div>
+
+    <div id="skills-list">
+        <!-- Blademaster - Level 1 -->
+        <div class="skill-card" data-class="Blademaster" data-level="1">
+            <h3>Blademaster - Level 1</h3>
+            <p><strong>Power Slash:</strong> Deal 1d10 extra damage with a two-handed weapon.</p>
+            <p><strong>Riposte:</strong> Counter an enemy's melee attack, dealing 1d8 damage.</p>
+            <p><strong>Weapon Throw:</strong> Throw a melee weapon to deal 1d8 damage at range.</p>
+        </div>
+
+        <!-- Blademaster - Level 2 -->
+        <div class="skill-card" data-class="Blademaster" data-level="2">
+            <h3>Blademaster - Level 2</h3>
+            <p><strong>Blade Dance:</strong> Hit all enemies in a 5-foot radius for 1d8 damage each.</p>
+            <p><strong>Weapon Mastery:</strong> Gain +1 attack rolls with swords.</p>
+            <p><strong>Momentum:</strong> Gain +10 feet of movement after a melee kill.</p>
+        </div>
+
+        <!-- Blademaster - Level 3 -->
+        <div class="skill-card" data-class="Blademaster" data-level="3">
+            <h3>Blademaster - Level 3</h3>
+            <p><strong>Sweeping Strike:</strong> Attack two adjacent enemies.</p>
+            <p><strong>Disarm:</strong> Force an enemy to drop their weapon.</p>
+            <p><strong>Focus:</strong> Gain advantage on your next melee attack.</p>
+        </div>
+
+        <!-- Blademaster - Level 4 -->
+        <div class="skill-card" data-class="Blademaster" data-level="4">
+            <h3>Blademaster - Level 4</h3>
+            <p><strong>Armor Breaker:</strong> Ignore 3 points of an enemy’s armor.</p>
+            <p><strong>Counter Strike:</strong> Attack an enemy that misses you.</p>
+            <p><strong>Bloodlust:</strong> Gain +2 damage for 1 minute after dealing a critical hit.</p>
+        </div>
+
+        <!-- Blademaster - Level 5 -->
+        <div class="skill-card" data-class="Blademaster" data-level="5">
+            <h3>Blademaster - Level 5</h3>
+            <p><strong>Blade Flurry:</strong> Attack three enemies within reach.</p>
+            <p><strong>Perfect Parry:</strong> Reduce all damage from one melee attack.</p>
+            <p><strong>Savage Strike:</strong> Add 2d6 extra damage to a melee attack.</p>
+        </div>
+
+        <!-- Ranger - Level 1 -->
+        <div class="skill-card" data-class="Ranger" data-level="1">
+            <h3>Ranger - Level 1</h3>
+            <p><strong>Precise Shot:</strong> Ranged attack with +2 to hit.</p>
+            <p><strong>Quick Draw:</strong> Draw and shoot as a single action.</p>
+            <p><strong>Camouflage:</strong> Gain advantage on stealth checks in natural terrain.</p>
+        </div>
+
+        <!-- Ranger - Level 2 -->
+        <div class="skill-card" data-class="Ranger" data-level="2">
+            <h3>Ranger - Level 2</h3>
+            <p><strong>Rapid Shot:</strong> Fire twice in one turn at disadvantage.</p>
+            <p><strong>Entangling Shot:</strong> Slow a target's movement by 10 feet.</p>
+            <p><strong>Hunter's Reflex:</strong> Gain +1 AC against ranged attacks.</p>
+        </div>
+
+        <!-- Ranger - Level 3 -->
+        <div class="skill-card" data-class="Ranger" data-level="3">
+            <h3>Ranger - Level 3</h3>
+            <p><strong>Multi-Shot:</strong> Hit two enemies within a 15-foot cone.</p>
+            <p><strong>Trap Expert:</strong> Lay a trap that deals 2d6 damage when triggered.</p>
+            <p><strong>Beast Whisperer:</strong> Charm a beast for 1 hour.</p>
+        </div>
+
+        <!-- Ranger - Level 4 -->
+        <div class="skill-card" data-class="Ranger" data-level="4">
+            <h3>Ranger - Level 4</h3>
+            <p><strong>Volley:</strong> Fire arrows in a 10-foot radius, dealing 1d8 damage to each target.</p>
+            <p><strong>Evasion:</strong> Take half damage from area-of-effect attacks.</p>
+            <p><strong>Deadly Aim:</strong> Ignore 2 points of an enemy’s armor.</p>
+        </div>
+
+        <!-- Ranger - Level 5 -->
+        <div class="skill-card" data-class="Ranger" data-level="5">
+            <h3>Ranger - Level 5</h3>
+            <p><strong>Arrow Storm:</strong> Fire 6 arrows at different targets within range.</p>
+            <p><strong>Lethal Shot:</strong> Deal double damage on a critical hit.</p>
+            <p><strong>Predator's Strike:</strong> Gain advantage and +2 damage on a marked target.</p>
+        </div>
+
+        <!-- Barbarian - Level 1 -->
+        <div class="skill-card" data-class="Barbarian" data-level="1">
+            <h3>Barbarian - Level 1</h3>
+            <p><strong>Reckless Attack:</strong> Gain advantage on attack rolls but grant advantage to enemies.</p>
+            <p><strong>Charge:</strong> Move double your speed and attack with +1 damage.</p>
+            <p><strong>Feral Roar:</strong> Frighten nearby enemies for 1 turn.</p>
+        </div>
+
+        <!-- Barbarian - Level 2 -->
+        <div class="skill-card" data-class="Barbarian" data-level="2">
+            <h3>Barbarian - Level 2</h3>
+            <p><strong>Brutal Strike:</strong> Deal 2d6 damage with a melee attack.</p>
+            <p><strong>Survival Instinct:</strong> Gain advantage on perception checks.</p>
+            <p><strong>Adrenaline Surge:</strong> Take an additional action this turn.</p>
+        </div>
+
+        <!-- Barbarian - Level 3 -->
+        <div class="skill-card" data-class="Barbarian" data-level="3">
+            <h3>Barbarian - Level 3</h3>
+            <p><strong>Cleave:</strong> Hit two enemies with one melee attack.</p>
+            <p><strong>Roaring Charge:</strong> Push enemies 10 feet after charging.</p>
+            <p><strong>Enduring Rage:</strong> Extend your rage duration by 2 turns.</p>
+        </div>
+
+        <!-- Barbarian - Level 4 -->
+        <div class="skill-card" data-class="Barbarian" data-level="4">
+            <h3>Barbarian - Level 4</h3>
+            <p><strong>Resilient Body:</strong> Reduce all incoming damage by 3.</p>
+            <p><strong>Crushing Blow:</strong> Ignore 4 points of an enemy's armor.</p>
+            <p><strong>Savage Leap:</strong> Jump 15 feet and deal 1d6 damage to enemies in the landing zone.</p>
+        </div>
+
+        <!-- Barbarian - Level 5 -->
+        <div class="skill-card" data-class="Barbarian" data-level="5">
+            <h3>Barbarian - Level 5</h3>
+            <p><strong>Unstoppable Force:</strong> Charge through enemies, dealing 2d8 damage.</p>
+            <p><strong>Bloodthirsty Strike:</strong> Double damage on a critical hit.</p>
+            <p><strong>Frenzy:</strong> Make two additional melee attacks in a turn.</p>
+        </div>
+
+        <!-- Duelist - Level 1 -->
+        <div class="skill-card" data-class="Duelist" data-level="1">
+            <h3>Duelist - Level 1</h3>
+            <p><strong>Flurry of Blows:</strong> Attack twice in one turn.</p>
+            <p><strong>Dodge:</strong> Reduce all incoming damage from a single attack by half.</p>
+            <p><strong>Blade Parry:</strong> Counterattack when successfully parrying an enemy strike.</p>
+        </div>
+
+        <!-- Duelist - Level 2 -->
+        <div class="skill-card" data-class="Duelist" data-level="2">
+            <h3>Duelist - Level 2</h3>
+            <p><strong>Precision Strike:</strong> Ignore 2 points of enemy armor with an attack.</p>
+            <p><strong>Rapid Footwork:</strong> Move 10 feet after each successful attack.</p>
+            <p><strong>Riposte:</strong> Deal an extra 1d8 damage after dodging an enemy's attack.</p>
+        </div>
+
+        <!-- Duelist - Level 3 -->
+        <div class="skill-card" data-class="Duelist" data-level="3">
+            <h3>Duelist - Level 3</h3>
+            <p><strong>Blade Dance:</strong> Hit multiple enemies with a single attack.</p>
+            <p><strong>Feint:</strong> Trick an enemy into lowering their guard, reducing their AC for 1 turn.</p>
+            <p><strong>Counterstrike:</strong> Immediately attack after dodging a melee attack.</p>
+        </div>
+
+        <!-- Duelist - Level 4 -->
+        <div class="skill-card" data-class="Duelist" data-level="4">
+            <h3>Duelist - Level 4</h3>
+            <p><strong>Master Parry:</strong> Automatically deflect one incoming melee attack per turn.</p>
+            <p><strong>Death Blossom:</strong> Attack all enemies in a 10-foot radius for 1d6 damage each.</p>
+            <p><strong>Swift Footwork:</strong> Move 20 feet after a successful attack.</p>
+        </div>
+
+        <!-- Duelist - Level 5 -->
+        <div class="skill-card" data-class="Duelist" data-level="5">
+            <h3>Duelist - Level 5</h3>
+            <p><strong>Adrenaline Rush:</strong> Gain +2 damage and +2 AC for 1 minute.</p>
+            <p><strong>Death Strike:</strong> Deal double damage to an opponent with 25% or less HP.</p>
+            <p><strong>Unstoppable Assault:</strong> Attack three enemies in one turn.</p>
+        </div>
+
+        <!-- Berserker - Level 1 -->
+        <div class="skill-card" data-class="Berserker" data-level="1">
+            <h3>Berserker - Level 1</h3>
+            <p><strong>Rage:</strong> Gain +2 damage and take -2 AC for 1 minute.</p>
+            <p><strong>Brutal Smash:</strong> Deal an extra 1d6 damage with a melee attack.</p>
+            <p><strong>Unyielding:</strong> Gain advantage on saving throws against fear effects.</p>
+        </div>
+
+        <!-- Berserker - Level 2 -->
+        <div class="skill-card" data-class="Berserker" data-level="2">
+            <h3>Berserker - Level 2</h3>
+            <p><strong>Frenzied Attack:</strong> Make two attacks in one turn.</p>
+            <p><strong>Bloodlust:</strong> Heal for half of damage dealt in a turn.</p>
+            <p><strong>Combat Focus:</strong> Gain +1 AC and +1 damage for 1 turn after a successful attack.</p>
+        </div>
+
+        <!-- Berserker - Level 3 -->
+        <div class="skill-card" data-class="Berserker" data-level="3">
+            <h3>Berserker - Level 3</h3>
+            <p><strong>Rampage:</strong> Attack up to 3 targets within reach in a single action.</p>
+            <p><strong>Endless Fury:</strong> Reduce damage taken by 3 while raging.</p>
+            <p><strong>Unstoppable Fury:</strong> Attack all enemies within a 15-foot radius.</p>
+        </div>
+
+        <!-- Berserker - Level 4 -->
+        <div class="skill-card" data-class="Berserker" data-level="4">
+            <h3>Berserker - Level 4</h3>
+            <p><strong>Raging Storm:</strong> Deal 2d6 extra damage on a successful melee attack.</p>
+            <p><strong>Indomitable Will:</strong> Gain advantage on saving throws against charm or fear effects.</p>
+            <p><strong>Bloodrage:</strong> Heal for half of damage dealt when raging.</p>
+        </div>
+
+        <!-- Berserker - Level 5 -->
+        <div class="skill-card" data-class="Berserker" data-level="5">
+            <h3>Berserker - Level 5</h3>
+            <p><strong>Wrath of the Berserker:</strong> Double all damage dealt during a rage.</p>
+            <p><strong>Unstoppable Rage:</strong> Keep fighting despite being critically injured, ignoring 1 point of damage per turn.</p>
+            <p><strong>Brutal Fury:</strong> Deal an additional 3d6 damage with melee attacks during rage.</p>
+        </div>
+    </div>
+    <div id="skill-cards-container">
+        <!-- Elementalist - Level 1 -->
+        <div class="skill-card" data-class="Elementalist" data-level="1">
+            <h3>Elementalist - Level 1</h3>
+            <p><strong>Fire Bolt:</strong> Deal 1d8 fire damage to a target within 60 feet.</p>
+            <p><strong>Stone Shield:</strong> Create a shield that adds +2 AC for 1 turn.</p>
+            <p><strong>Wind Push:</strong> Push an enemy 10 feet away.</p>
+        </div>
+
+        <!-- Elementalist - Level 2 -->
+        <div class="skill-card" data-class="Elementalist" data-level="2">
+            <h3>Elementalist - Level 2</h3>
+            <p><strong>Flame Wave:</strong> Deal 2d6 fire damage in a 15-foot cone.</p>
+            <p><strong>Water Surge:</strong> Heal an ally for 1d10 HP.</p>
+            <p><strong>Quake:</strong> Knock all enemies within 10 feet prone.</p>
+        </div>
+
+        <!-- Elementalist - Level 3 -->
+        <div class="skill-card" data-class="Elementalist" data-level="3">
+            <h3>Elementalist - Level 3</h3>
+            <p><strong>Inferno Blast:</strong> Deal 3d8 fire damage in a 20-foot radius.</p>
+            <p><strong>Hurricane:</strong> Create a 10-foot vortex that restrains enemies.</p>
+            <p><strong>Earth Spike:</strong> Summon a spike to deal 2d10 damage and reduce speed.</p>
+        </div>
+
+        <!-- Elementalist - Level 4 -->
+        <div class="skill-card" data-class="Elementalist" data-level="4">
+            <h3>Elementalist - Level 4</h3>
+            <p><strong>Elemental Form:</strong> Transform partially into your chosen element, gaining immunity to its damage type for 1 minute.</p>
+            <p><strong>Frost Nova:</strong> Freeze enemies within 15 feet, dealing 2d8 cold damage.</p>
+            <p><strong>Volcanic Eruption:</strong> Deal 4d6 fire damage in a 30-foot radius.</p>
+        </div>
+
+        <!-- Elementalist - Level 5 -->
+        <div class="skill-card" data-class="Elementalist" data-level="5">
+            <h3>Elementalist - Level 5</h3>
+            <p><strong>Stormcall:</strong> Summon a lightning storm that deals 4d8 damage to all enemies in a 40-foot radius.</p>
+            <p><strong>Tsunami:</strong> Create a wave that knocks enemies back and deals 3d10 damage.</p>
+            <p><strong>Mountain’s Fury:</strong> Cause an earthquake that restrains all enemies in a 20-foot radius.</p>
+        </div>
+
+        <!-- Necromancer - Level 1 -->
+        <div class="skill-card" data-class="Necromancer" data-level="1">
+            <h3>Necromancer - Level 1</h3>
+            <p><strong>Drain Life:</strong> Deal 1d8 necrotic damage and heal for half the amount.</p>
+            <p><strong>Bone Wall:</strong> Summon a 10-foot wall for cover.</p>
+            <p><strong>Raise Skeleton:</strong> Summon a weak skeleton to fight for you.</p>
+        </div>
+
+        <!-- Necromancer - Level 2 -->
+        <div class="skill-card" data-class="Necromancer" data-level="2">
+            <h3>Necromancer - Level 2</h3>
+            <p><strong>Dark Pact:</strong> Sacrifice 5 HP to deal an extra 2d6 necrotic damage.</p>
+            <p><strong>Death’s Grasp:</strong> Restrain an enemy with ghostly hands.</p>
+            <p><strong>Plague Aura:</strong> Enemies within 5 feet take 1d6 poison damage each turn.</p>
+        </div>
+
+        <!-- Necromancer - Level 3 -->
+        <div class="skill-card" data-class="Necromancer" data-level="3">
+            <h3>Necromancer - Level 3</h3>
+            <p><strong>Wailing Spirits:</strong> Summon ghosts to deal 3d6 psychic damage in a 15-foot radius.</p>
+            <p><strong>Bone Spear:</strong> Deal 2d10 piercing damage to a line of enemies.</p>
+            <p><strong>Soul Shield:</strong> Absorb 10 points of damage as a magical barrier.</p>
+        </div>
+
+        <!-- Necromancer - Level 4 -->
+        <div class="skill-card" data-class="Necromancer" data-level="4">
+            <h3>Necromancer - Level 4</h3>
+            <p><strong>Army of the Dead:</strong> Summon 3 skeletons to fight for you.</p>
+            <p><strong>Death’s Mark:</strong> Mark an enemy to take double necrotic damage.</p>
+            <p><strong>Wither:</strong> Reduce an enemy’s attack rolls and AC by -2.</p>
+        </div>
+
+        <!-- Necromancer - Level 5 -->
+        <div class="skill-card" data-class="Necromancer" data-level="5">
+            <h3>Necromancer - Level 5</h3>
+            <p><strong>Lich Form:</strong> Transform into a lich for 1 minute, gaining +10 HP and resistance to all damage.</p>
+            <p><strong>Corpse Explosion:</strong> Cause a corpse to explode, dealing 5d6 damage in a 20-foot radius.</p>
+            <p><strong>Soul Harvest:</strong> Steal 10 HP from all enemies in a 30-foot radius.</p>
+        </div>
+
+        <!-- Sorcerer - Level 1 -->
+        <div class="skill-card" data-class="Sorcerer" data-level="1">
+            <h3>Sorcerer - Level 1</h3>
+            <p><strong>Magic Missile:</strong> Deal 1d4+1 force damage to up to 3 targets.</p>
+            <p><strong>Shield:</strong> Add +5 to AC as a reaction.</p>
+            <p><strong>Burning Hands:</strong> Deal 2d6 fire damage in a 15-foot cone.</p>
+        </div>
+
+        <!-- Sorcerer - Level 2 -->
+        <div class="skill-card" data-class="Sorcerer" data-level="2">
+            <h3>Sorcerer - Level 2</h3>
+            <p><strong>Mirror Image:</strong> Create duplicates to confuse attackers.</p>
+            <p><strong>Arcane Blast:</strong> Deal 2d8 force damage to a target within 60 feet.</p>
+            <p><strong>Blink:</strong> Teleport up to 30 feet.</p>
+        </div>
+
+        <!-- Sorcerer - Level 3 -->
+        <div class="skill-card" data-class="Sorcerer" data-level="3">
+            <h3>Sorcerer - Level 3</h3>
+            <p><strong>Fireball:</strong> Deal 4d6 fire damage in a 20-foot radius.</p>
+            <p><strong>Counterspell:</strong> Negate an enemy spell.</p>
+            <p><strong>Teleportation Circle:</strong> Create a portal for instant travel.</p>
+        </div>
+
+        <!-- Sorcerer - Level 4 -->
+        <div class="skill-card" data-class="Sorcerer" data-level="4">
+            <h3>Sorcerer - Level 4</h3>
+            <p><strong>Mana Shield:</strong> Reduce incoming damage by 10 for 3 turns.</p>
+            <p><strong>Frostbolt:</strong> Deal 3d8 cold damage and reduce speed.</p>
+            <p><strong>Lightning Arc:</strong> Chain lightning to hit 3 enemies for 2d10 damage each.</p>
+        </div>
+
+        <!-- Sorcerer - Level 5 -->
+        <div class="skill-card" data-class="Sorcerer" data-level="5">
+            <h3>Sorcerer - Level 5</h3>
+            <p><strong>Meteor Storm:</strong> Deal 6d10 fire damage in a 40-foot radius.</p>
+            <p><strong>Time Stop:</strong> Take two extra turns in a row.</p>
+            <p><strong>Arcane Mastery:</strong> Cast any known spell without using a spell slot.</p>
+        </div>
+
+        <!-- Illusionist - Level 1 -->
+        <div class="skill-card" data-class="Illusionist" data-level="1">
+            <h3>Illusionist - Level 1</h3>
+            <p><strong>Minor Illusion:</strong> Create a small illusion to distract enemies.</p>
+            <p><strong>Blur:</strong> Gain disadvantage for enemies targeting you.</p>
+            <p><strong>Dazzle:</strong> Blind a target for 1 turn.</p>
+        </div>
+
+        <!-- Illusionist - Level 2 -->
+        <div class="skill-card" data-class="Illusionist" data-level="2">
+            <h3>Illusionist - Level 2</h3>
+            <p><strong>Mirror Image:</strong> Create illusionary duplicates.</p>
+            <p><strong>Phantasmal Force:</strong> Create a mental image to harm a target for 1d6 damage per turn.</p>
+            <p><strong>Disguise Self:</strong> Alter your appearance.</p>
+        </div>
+
+        <!-- Illusionist - Level 3 -->
+        <div class="skill-card" data-class="Illusionist" data-level="3">
+            <h3>Illusionist - Level 3</h3>
+            <p><strong>Mass Hallucination:</strong> Confuse all enemies in a 20-foot radius.</p>
+            <p><strong>Invisibility:</strong> Become invisible for 1 minute.</p>
+            <p><strong>Illusory Terrain:</strong> Create fake terrain to hide or mislead enemies.</p>
+        </div>
+
+        <!-- Illusionist - Level 4 -->
+        <div class="skill-card" data-class="Illusionist" data-level="4">
+            <h3>Illusionist - Level 4</h3>
+            <p><strong>Shadow Bind:</strong> Restrain an enemy with shadowy tendrils.</p>
+            <p><strong>Clone Image:</strong> Create a decoy that mimics your actions.</p>
+            <p><strong>Mind Twist:</strong> Force an enemy to attack its ally.</p>
+        </div>
+
+        <!-- Illusionist - Level 5 -->
+        <div class="skill-card" data-class="Illusionist" data-level="5">
+            <h3>Illusionist - Level 5</h3>
+            <p><strong>Reality Warp:</strong> Alter the environment in a 30-foot radius for 1 minute.</p>
+            <p><strong>True Illusion:</strong> Create an illusion that deals 3d8 psychic damage per turn.</p>
+            <p><strong>Mind Erase:</strong> Wipe a creature’s memory of the past hour.</p>
+        </div>
+
+        <!-- Arcane Knight - Level 1 -->
+        <div class="skill-card" data-class="Arcane Knight" data-level="1">
+            <h3>Arcane Knight - Level 1</h3>
+            <p><strong>Arcane Strike:</strong> Infuse your weapon with magic, adding 1d6 force damage to your attack.</p>
+            <p><strong>Shield Bash:</strong> Stun a target with your shield for 1 turn.</p>
+            <p><strong>Magic Shield:</strong> Add +3 AC for 1 turn.</p>
+        </div>
+
+        <!-- Arcane Knight - Level 2 -->
+        <div class="skill-card" data-class="Arcane Knight" data-level="2">
+            <h3>Arcane Knight - Level 2</h3>
+            <p><strong>Elemental Smite:</strong> Choose an element to deal 2d6 extra damage to an enemy.</p>
+            <p><strong>Arcane Armor:</strong> Increase your armor class by +5 for 1 minute.</p>
+            <p><strong>Blazing Strike:</strong> Deal 3d6 fire damage on a critical hit.</p>
+        </div>
+
+        <!-- Arcane Knight - Level 3 -->
+        <div class="skill-card" data-class="Arcane Knight" data-level="3">
+            <h3>Arcane Knight - Level 3</h3>
+            <p><strong>Arcane Surge:</strong> Empower your attacks to deal an extra 1d8 force damage for 1 minute.</p>
+            <p><strong>Elemental Ward:</strong> Gain resistance to a chosen element for 1 minute.</p>
+            <p><strong>Magic Infusion:</strong> Recharge a spell slot by sacrificing 10 HP.</p>
+        </div>
+
+        <!-- Arcane Knight - Level 4 -->
+        <div class="skill-card" data-class="Arcane Knight" data-level="4">
+            <h3>Arcane Knight - Level 4</h3>
+            <p><strong>Divine Smite:</strong> Add 4d8 radiant damage on a critical hit.</p>
+            <p><strong>Spell Absorption:</strong> Absorb a spell to gain its effects for 1 turn.</p>
+            <p><strong>Arcane Shield Mastery:</strong> Use your shield to negate any spell targeting you once per day.</p>
+        </div>
+
+        <!-- Arcane Knight - Level 5 -->
+        <div class="skill-card" data-class="Arcane Knight" data-level="5">
+            <h3>Arcane Knight - Level 5</h3>
+            <p><strong>Arcane Mastery:</strong> Automatically cast a spell of your choice after a successful attack.</p>
+            <p><strong>Unstoppable Force:</strong> Increase damage by 1d12 on every attack for 1 minute.</p>
+            <p><strong>Time Stop:</strong> Freeze time for 10 seconds to take two turns in a row.</p>
+        </div>
+    </div>
+    <!-- Shieldbearer - Level 1 -->
+<div class="skill-card" data-class="Shieldbearer" data-level="1">
+    <h3>Shieldbearer - Level 1</h3>
+    <p><strong>Shield Bash:</strong> Deal 1d8 damage and knock an enemy prone.</p>
+    <p><strong>Fortify:</strong> Gain +5 temporary HP for 1 minute.</p>
+    <p><strong>Taunt:</strong> Force a target to attack you on its next turn.</p>
+</div>
+
+<!-- Shieldbearer - Level 2 -->
+<div class="skill-card" data-class="Shieldbearer" data-level="2">
+    <h3>Shieldbearer - Level 2</h3>
+    <p><strong>Defensive Stance:</strong> Reduce incoming damage by half for 1 turn.</p>
+    <p><strong>Guardian's Grit:</strong> Regain 10 HP once per short rest.</p>
+    <p><strong>Shield Toss:</strong> Throw your shield to deal 1d10 damage to a target within 30 feet.</p>
+</div>
+
+<!-- Shieldbearer - Level 3 -->
+<div class="skill-card" data-class="Shieldbearer" data-level="3">
+    <h3>Shieldbearer - Level 3</h3>
+    <p><strong>Shield Slam:</strong> Stun a target for 1 turn.</p>
+    <p><strong>Iron Will:</strong> Gain advantage on saving throws against being frightened.</p>
+    <p><strong>Cover Ally:</strong> Reduce damage taken by an ally within 10 feet by 5.</p>
+</div>
+
+<!-- Shieldbearer - Level 4 -->
+<div class="skill-card" data-class="Shieldbearer" data-level="4">
+    <h3>Shieldbearer - Level 4</h3>
+    <p><strong>Reflective Shield:</strong> Reflect 1d6 damage back at a melee attacker.</p>
+    <p><strong>Bastion:</strong> Allies within 10 feet gain +2 AC.</p>
+    <p><strong>Indomitable:</strong> Once per long rest, reroll a failed saving throw.</p>
+</div>
+
+<!-- Shieldbearer - Level 5 -->
+<div class="skill-card" data-class="Shieldbearer" data-level="5">
+    <h3>Shieldbearer - Level 5</h3>
+    <p><strong>Unbreakable Wall:</strong> Reduce all incoming damage by 5 for 1 minute.</p>
+    <p><strong>Shattering Slam:</strong> Deal 2d10 damage and break the enemy’s armor bonus for 3 turns.</p>
+    <p><strong>Ultimate Taunt:</strong> Force all enemies within 30 feet to attack you for 1 turn.</p>
+</div>
+
+<!-- Warden - Level 1 -->
+<div class="skill-card" data-class="Warden" data-level="1">
+    <h3>Warden - Level 1</h3>
+    <p><strong>Vine Snare:</strong> Restrain an enemy in a 10-foot radius.</p>
+    <p><strong>Stone Skin:</strong> Gain resistance to bludgeoning, piercing, and slashing damage for 1 minute.</p>
+    <p><strong>Roots of the Earth:</strong> Prevent being knocked prone.</p>
+</div>
+
+<!-- Warden - Level 2 -->
+<div class="skill-card" data-class="Warden" data-level="2">
+    <h3>Warden - Level 2</h3>
+    <p><strong>Verdant Heal:</strong> Heal yourself or an ally for 1d10 HP.</p>
+    <p><strong>Entangle:</strong> Create difficult terrain in a 15-foot radius.</p>
+    <p><strong>Thorn Shield:</strong> Reflect 1d6 damage back at attackers.</p>
+</div>
+
+<!-- Warden - Level 3 -->
+<div class="skill-card" data-class="Warden" data-level="3">
+    <h3>Warden - Level 3</h3>
+    <p><strong>Bark Armor:</strong> Gain +3 AC for 10 minutes.</p>
+    <p><strong>Earthquake Stomp:</strong> Knock enemies within 15 feet prone.</p>
+    <p><strong>Nature's Wrath:</strong> Deal 2d8 damage to all enemies in a 10-foot radius.</p>
+</div>
+
+<!-- Warden - Level 4 -->
+<div class="skill-card" data-class="Warden" data-level="4">
+    <h3>Warden - Level 4</h3>
+    <p><strong>Healing Pulse:</strong> Heal all allies within 15 feet for 2d10 HP.</p>
+    <p><strong>Living Fortress:</strong> Reduce all incoming damage by 3.</p>
+    <p><strong>Spiked Growth:</strong> Create an area that deals 2d6 damage to enemies moving through it.</p>
+</div>
+
+<!-- Warden - Level 5 -->
+<div class="skill-card" data-class="Warden" data-level="5">
+    <h3>Warden - Level 5</h3>
+    <p><strong>Nature’s Guardian:</strong> Summon a treant to fight alongside you for 1 minute.</p>
+    <p><strong>Stone Pillar:</strong> Raise a pillar to block attacks and movement.</p>
+    <p><strong>Life Surge:</strong> Restore 20 HP to all allies within 30 feet.</p>
+</div>
+
+<!-- Ironclad - Level 1 -->
+<div class="skill-card" data-class="Ironclad" data-level="1">
+    <h3>Ironclad - Level 1</h3>
+    <p><strong>Steel Strike:</strong> Deal 1d8 damage and reduce an enemy’s movement by half.</p>
+    <p><strong>Brace:</strong> Gain +2 AC until your next turn.</p>
+    <p><strong>War Cry:</strong> Increase nearby allies’ attack rolls by +1 for 1 turn.</p>
+</div>
+
+<!-- Ironclad - Level 2 -->
+<div class="skill-card" data-class="Ironclad" data-level="2">
+    <h3>Ironclad - Level 2</h3>
+    <p><strong>Iron Grip:</strong> Prevent a grappled enemy from escaping.</p>
+    <p><strong>Deflect:</strong> Reduce incoming damage by 1d8.</p>
+    <p><strong>Unstoppable Charge:</strong> Move through enemies, knocking them back 5 feet.</p>
+</div>
+
+<!-- Ironclad - Level 3 -->
+<div class="skill-card" data-class="Ironclad" data-level="3">
+    <h3>Ironclad - Level 3</h3>
+    <p><strong>Battle Stance:</strong> Gain +1 AC and advantage on attack rolls for 1 minute.</p>
+    <p><strong>Earth Shatter:</strong> Deal 2d6 damage and knock enemies prone in a 10-foot radius.</p>
+    <p><strong>Resilient Body:</strong> Gain resistance to non-magical damage for 1 turn.</p>
+</div>
+
+<!-- Ironclad - Level 4 -->
+<div class="skill-card" data-class="Ironclad" data-level="4">
+    <h3>Ironclad - Level 4</h3>
+    <p><strong>Fortress Stance:</strong> Allies within 10 feet gain +1 AC.</p>
+    <p><strong>Hammer Strike:</strong> Deal 3d8 damage and stun a target for 1 turn.</p>
+    <p><strong>Hold the Line:</strong> Enemies moving past you provoke opportunity attacks.</p>
+</div>
+
+<!-- Ironclad - Level 5 -->
+<div class="skill-card" data-class="Ironclad" data-level="5">
+    <h3>Ironclad - Level 5</h3>
+    <p><strong>Immortal Resolve:</strong> Reduce all incoming damage by half for 1 minute.</p>
+    <p><strong>Titan Slam:</strong> Deal 4d10 damage and create a 20-foot shockwave.</p>
+    <p><strong>Ultimate Defense:</strong> Gain immunity to all damage for 1 turn.</p>
+</div>
+
+<!-- Sentinel - Level 1 -->
+<div class="skill-card" data-class="Sentinel" data-level="1">
+    <h3>Sentinel - Level 1</h3>
+    <p><strong>Overwatch:</strong> Ready an attack for when an enemy moves.</p>
+    <p><strong>Deflect Blow:</strong> Reduce damage from a melee attack by 1d6.</p>
+    <p><strong>Hold Position:</strong> Gain +2 AC when not moving.</p>
+</div>
+
+<!-- Sentinel - Level 2 -->
+<div class="skill-card" data-class="Sentinel" data-level="2">
+    <h3>Sentinel - Level 2</h3>
+    <p><strong>Intercept:</strong> Move up to 15 feet to block an attack against an ally.</p>
+    <p><strong>Trap Set:</strong> Place a trap that deals 2d6 damage.</p>
+    <p><strong>Reactive Strike:</strong> Automatically attack an enemy that misses you.</p>
+</div>
+
+<!-- Sentinel - Level 3 -->
+<div class="skill-card" data-class="Sentinel" data-level="3">
+    <h3>Sentinel - Level 3</h3>
+    <p><strong>Guardian Stance:</strong> Reduce damage taken by adjacent allies by 2.</p>
+    <p><strong>Leg Sweep:</strong> Knock an enemy prone.</p>
+    <p><strong>Focused Guard:</strong> Gain advantage on saving throws for 1 minute.</p>
+</div>
+
+<!-- Sentinel - Level 4 -->
+<div class="skill-card" data-class="Sentinel" data-level="4">
+    <h3>Sentinel - Level 4</h3>
+    <p><strong>Sentinel's Resolve:</strong> Regain 15 HP as a bonus action once per rest.</p>
+    <p><strong>Disarming Strike:</strong> Force an enemy to drop their weapon.</p>
+    <p><strong>Zone Control:</strong> Prevent enemies within 10 feet from moving past you.</p>
+</div>
+
+<!-- Sentinel - Level 5 -->
+<div class="skill-card" data-class="Sentinel" data-level="5">
+    <h3>Sentinel - Level 5</h3>
+    <p><strong>Immovable Stance:</strong> Become immune to forced movement effects.</p>
+    <p><strong>Crippling Blow:</strong> Deal 3d10 damage and reduce an enemy’s speed to 0.</p>
+    <p><strong>Unyielding Protector:</strong> Shield all adjacent allies, granting +3 AC for 1 turn.</p>
+</div>
+
+<!-- Blood Knight - Level 1 -->
+<div class="skill-card" data-class="Blood Knight" data-level="1">
+    <h3>Blood Knight - Level 1</h3>
+    <p><strong>Sanguine Strike:</strong> Deal 1d10 damage and heal for half the amount.</p>
+    <p><strong>Crimson Shield:</strong> Gain temporary HP equal to your Constitution modifier.</p>
+    <p><strong>Bloodletting:</strong> Sacrifice 5 HP to deal an extra 2d6 damage.</p>
+</div>
+
+<!-- Blood Knight - Level 2 -->
+<div class="skill-card" data-class="Blood Knight" data-level="2">
+    <h3>Blood Knight - Level 2</h3>
+    <p><strong>Vampiric Aura:</strong> Heal all allies within 10 feet for 1d8 HP.</p>
+    <p><strong>Blood Pact:</strong> Share your HP with an ally.</p>
+    <p><strong>Rage of the Wounded:</strong> Gain +1 attack roll for each 10 HP missing.</p>
+</div>
+
+<!-- Blood Knight - Level 3 -->
+<div class="skill-card" data-class="Blood Knight" data-level="3">
+    <h3>Blood Knight - Level 3</h3>
+    <p><strong>Hemorrhage:</strong> Deal 2d8 damage over time to a target for 3 turns.</p>
+    <p><strong>Crimson Chains:</strong> Restrain an enemy and deal 1d6 damage per turn.</p>
+    <p><strong>Unyielding Vitality:</strong> Regain 15 HP as a bonus action.</p>
+</div>
+
+<!-- Blood Knight - Level 4 -->
+<div class="skill-card" data-class="Blood Knight" data-level="4">
+    <h3>Blood Knight - Level 4</h3>
+    <p><strong>Blood Surge:</strong> Sacrifice 10 HP to gain +2 AC and attack rolls for 1 minute.</p>
+    <p><strong>Crimson Vortex:</strong> Deal 3d8 damage to all enemies within 10 feet.</p>
+    <p><strong>Sanguine Bond:</strong> Transfer 20 HP to an ally as a reaction.</p>
+</div>
+
+<!-- Blood Knight - Level 5 -->
+<div class="skill-card" data-class="Blood Knight" data-level="5">
+    <h3>Blood Knight - Level 5</h3>
+    <p><strong>Reaper's Strike:</strong> Deal 5d10 damage and heal for half the amount.</p>
+    <p><strong>Blood Armor:</strong> Gain resistance to all damage for 1 minute, sacrificing 10 HP per turn.</p>
+    <p><strong>Vampiric Rebirth:</strong> Upon dropping to 0 HP, revive with 20 HP once per day.</p>
+</div>
+<!-- Chronomancer - Level 1 -->
+<div class="skill-card" data-class="Chronomancer" data-level="1">
+    <h3>Chronomancer - Level 1</h3>
+    <p><strong>Hasten:</strong> Double an ally’s movement and grant them an extra action for 1 turn.</p>
+    <p><strong>Time Lock:</strong> Stun a target for 1 turn.</p>
+    <p><strong>Rewind:</strong> Undo damage dealt to an ally in the last turn (up to 10 HP).</p>
+</div>
+
+<!-- Chronomancer - Level 2 -->
+<div class="skill-card" data-class="Chronomancer" data-level="2">
+    <h3>Chronomancer - Level 2</h3>
+    <p><strong>Temporal Shield:</strong> Reduce incoming damage by 1d8 for 1 turn.</p>
+    <p><strong>Slow Field:</strong> Halve the movement speed of all enemies in a 15-foot radius.</p>
+    <p><strong>Time Echo:</strong> Repeat the last action you performed.</p>
+</div>
+
+<!-- Chronomancer - Level 3 -->
+<div class="skill-card" data-class="Chronomancer" data-level="3">
+    <h3>Chronomancer - Level 3</h3>
+    <p><strong>Chrono Blade:</strong> Deal 2d10 damage, striking twice in quick succession.</p>
+    <p><strong>Frozen Moment:</strong> Freeze an enemy in place for 2 turns.</p>
+    <p><strong>Accelerate:</strong> Grant an ally advantage on all rolls for 1 turn.</p>
+</div>
+
+<!-- Chronomancer - Level 4 -->
+<div class="skill-card" data-class="Chronomancer" data-level="4">
+    <h3>Chronomancer - Level 4</h3>
+    <p><strong>Time Bubble:</strong> Create a zone where enemies can’t enter or exit for 3 turns.</p>
+    <p><strong>Temporal Surge:</strong> Refresh all your expended abilities.</p>
+    <p><strong>Reversal:</strong> Undo all damage taken in the last round (up to 20 HP).</p>
+</div>
+
+<!-- Chronomancer - Level 5 -->
+<div class="skill-card" data-class="Chronomancer" data-level="5">
+    <h3>Chronomancer - Level 5</h3>
+    <p><strong>Stop Time:</strong> Freeze all enemies for 1 turn, allowing allies to act freely.</p>
+    <p><strong>Paradox:</strong> Rewrite reality, restoring all allies to full HP once per day.</p>
+    <p><strong>Timelord's Wrath:</strong> Unleash a blast dealing 5d12 damage in a 30-foot radius.</p>
+</div>
+
+<!-- Spellblade - Level 1 -->
+<div class="skill-card" data-class="Spellblade" data-level="1">
+    <h3>Spellblade - Level 1</h3>
+    <p><strong>Flame Slash:</strong> Deal 1d10 fire damage in a 10-foot arc.</p>
+    <p><strong>Mana Shield:</strong> Absorb 1d8 damage as a reaction.</p>
+    <p><strong>Arcane Leap:</strong> Teleport up to 15 feet and strike a target for 1d8 damage.</p>
+</div>
+
+<!-- Spellblade - Level 2 -->
+<div class="skill-card" data-class="Spellblade" data-level="2">
+    <h3>Spellblade - Level 2</h3>
+    <p><strong>Frost Blade:</strong> Slow an enemy by half their movement and deal 1d10 cold damage.</p>
+    <p><strong>Eldritch Charge:</strong> Dash up to 30 feet and deal 2d8 damage on impact.</p>
+    <p><strong>Elemental Burst:</strong> Release a shockwave dealing 2d6 elemental damage to all nearby enemies.</p>
+</div>
+
+<!-- Spellblade - Level 3 -->
+<div class="skill-card" data-class="Spellblade" data-level="3">
+    <h3>Spellblade - Level 3</h3>
+    <p><strong>Thunder Strike:</strong> Deal 2d10 lightning damage and stun the target.</p>
+    <p><strong>Blade Storm:</strong> Spin in place, dealing 2d8 damage to all enemies within 5 feet.</p>
+    <p><strong>Mystic Parry:</strong> Reduce melee damage taken by 1d12.</p>
+</div>
+
+<!-- Spellblade - Level 4 -->
+<div class="skill-card" data-class="Spellblade" data-level="4">
+    <h3>Spellblade - Level 4</h3>
+    <p><strong>Arcane Counter:</strong> Reflect a spell back at its caster.</p>
+    <p><strong>Ethereal Form:</strong> Become incorporeal for 1 turn, avoiding all damage.</p>
+    <p><strong>Runic Empowerment:</strong> Temporarily double your Strength modifier for 1 minute.</p>
+</div>
+
+<!-- Spellblade - Level 5 -->
+<div class="skill-card" data-class="Spellblade" data-level="5">
+    <h3>Spellblade - Level 5</h3>
+    <p><strong>Celestial Slash:</strong> Unleash a beam of light, dealing 5d10 radiant damage in a line.</p>
+    <p><strong>Dimensional Rift:</strong> Teleport all allies up to 60 feet away.</p>
+    <p><strong>Ultimate Infusion:</strong> Add 4d10 elemental damage to your attacks for 1 minute.</p>
+</div>
+
+<!-- Phantom - Level 1 -->
+<div class="skill-card" data-class="Phantom" data-level="1">
+    <h3>Phantom - Level 1</h3>
+    <p><strong>Shadow Strike:</strong> Deal 1d10 damage and blind the target for 1 turn.</p>
+    <p><strong>Phantom Veil:</strong> Turn invisible for 1 turn.</p>
+    <p><strong>Spectral Blade:</strong> Create a weapon that deals 1d8 necrotic damage.</p>
+</div>
+
+<!-- Phantom - Level 2 -->
+<div class="skill-card" data-class="Phantom" data-level="2">
+    <h3>Phantom - Level 2</h3>
+    <p><strong>Vanishing Step:</strong> Dodge an attack and teleport behind the attacker.</p>
+    <p><strong>Ghostly Grasp:</strong> Restrain a target for 1 turn.</p>
+    <p><strong>Haunting Presence:</strong> Frighten all enemies within 15 feet.</p>
+</div>
+
+<!-- Phantom - Level 3 -->
+<div class="skill-card" data-class="Phantom" data-level="3">
+    <h3>Phantom - Level 3</h3>
+    <p><strong>Shadow Clone:</strong> Create an illusory copy of yourself for 1 minute.</p>
+    <p><strong>Nightmare Slash:</strong> Deal 2d10 psychic damage to a sleeping or frightened enemy.</p>
+    <p><strong>Ethereal Dash:</strong> Move 30 feet without provoking opportunity attacks.</p>
+</div>
+
+<!-- Phantom - Level 4 -->
+<div class="skill-card" data-class="Phantom" data-level="4">
+    <h3>Phantom - Level 4</h3>
+    <p><strong>Spectral Barrage:</strong> Summon blades of shadow to deal 3d8 damage in a 20-foot radius.</p>
+    <p><strong>Cloak of Darkness:</strong> Grant yourself and allies within 10 feet invisibility.</p>
+    <p><strong>Phantom Evasion:</strong> Avoid all area-of-effect damage.</p>
+</div>
+
+<!-- Phantom - Level 5 -->
+<div class="skill-card" data-class="Phantom" data-level="5">
+    <h3>Phantom - Level 5</h3>
+    <p><strong>Wraith Form:</strong> Become immune to all non-magical damage for 1 turn.</p>
+    <p><strong>Spectral Army:</strong> Summon shadowy allies to fight for you for 1 minute.</p>
+    <p><strong>Nightfall:</strong> Blanket the area in magical darkness, dealing 4d10 necrotic damage to enemies.</p>
+</div>
+
+<!-- Soulbinder - Level 1 -->
+<div class="skill-card" data-class="Soulbinder" data-level="1">
+    <h3>Soulbinder - Level 1</h3>
+    <p><strong>Soul Drain:</strong> Deal 1d8 necrotic damage and heal for half the amount.</p>
+    <p><strong>Spirit Shield:</strong> Reduce damage taken by 1d6.</p>
+    <p><strong>Binding Grasp:</strong> Prevent an enemy from moving for 1 turn.</p>
+</div>
+
+<!-- Soulbinder - Level 2 -->
+<div class="skill-card" data-class="Soulbinder" data-level="2">
+    <h3>Soulbinder - Level 2</h3>
+    <p><strong>Spectral Ally:</strong> Summon a spirit that aids in combat for 2d6 damage per turn.</p>
+    <p><strong>Wail of the Lost:</strong> Frighten all enemies in a 20-foot radius.</p>
+    <p><strong>Soul Bond:</strong> Link health with an ally, sharing damage.</p>
+</div>
+
+<!-- Soulbinder - Level 3 -->
+<div class="skill-card" data-class="Soulbinder" data-level="3">
+    <h3>Soulbinder - Level 3</h3>
+    <p><strong>Necrotic Wave:</strong> Deal 2d10 damage to all enemies in a 15-foot radius.</p>
+    <p><strong>Spirit Ward:</strong> Reduce incoming magic damage by 1d12.</p>
+    <p><strong>Revive Spirit:</strong> Resurrect a fallen ally with half HP.</p>
+</div>
+
+<!-- Soulbinder - Level 4 -->
+<div class="skill-card" data-class="Soulbinder" data-level="4">
+    <h3>Soulbinder - Level 4</h3>
+    <p><strong>Phantom Army:</strong> Summon 3 spirits to fight alongside you.</p>
+    <p><strong>Life Syphon:</strong> Drain 20 HP from an enemy and heal an ally.</p>
+    <p><strong>Spectral Anchor:</strong> Prevent an enemy from teleporting or fleeing.</p>
+</div>
+
+<!-- Soulbinder - Level 5 -->
+<div class="skill-card" data-class="Soulbinder" data-level="5">
+    <h3>Soulbinder - Level 5</h3>
+    <p><strong>Soul Reaver:</strong> Deal 5d12 damage and heal all allies for half the total.</p>
+    <p><strong>Spirit Realm:</strong> Enter a state where you can’t be targeted for 2 turns.</p>
+    <p><strong>Eternal Bond:</strong> Permanently gain +10 HP for each spirit ally summoned.</p>
+</div>
+
+<!-- Runesmith - Level 1 -->
+<div class="skill-card" data-class="Runesmith" data-level="1">
+    <h3>Runesmith - Level 1</h3>
+    <p><strong>Flame Rune:</strong> Enchant a weapon to deal 1d8 fire damage.</p>
+    <p><strong>Ward Rune:</strong> Grant +2 AC to an ally for 1 turn.</p>
+    <p><strong>Explosive Glyph:</strong> Deal 1d10 damage to all enemies in a 10-foot radius.</p>
+</div>
+
+<!-- Runesmith - Level 2 -->
+<div class="skill-card" data-class="Runesmith" data-level="2">
+    <h3>Runesmith - Level 2</h3>
+    <p><strong>Ice Rune:</strong> Slow an enemy’s movement by half and deal 1d8 cold damage.</p>
+    <p><strong>Runic Pulse:</strong> Heal an ally for 1d10 HP.</p>
+    <p><strong>Lightning Glyph:</strong> Deal 2d6 lightning damage in a line.</p>
+</div>
+
+<!-- Runesmith - Level 3 -->
+<div class="skill-card" data-class="Runesmith" data-level="3">
+    <h3>Runesmith - Level 3</h3>
+    <p><strong>Empowered Weapon:</strong> Double the damage of a rune-engraved weapon for 1 turn.</p>
+    <p><strong>Rune Barrier:</strong> Reduce all incoming damage by 5 for 1 turn.</p>
+    <p><strong>Shatter Glyph:</strong> Deal 2d12 damage to a single target.</p>
+</div>
+
+<!-- Runesmith - Level 4 -->
+<div class="skill-card" data-class="Runesmith" data-level="4">
+    <h3>Runesmith - Level 4</h3>
+    <p><strong>Greater Flame Rune:</strong> Deal 3d8 fire damage to all enemies within 10 feet.</p>
+    <p><strong>Runic Ward:</strong> Grant resistance to all damage types for 1 minute.</p>
+    <p><strong>Chain Rune:</strong> Link two enemies, sharing damage between them.</p>
+</div>
+
+<!-- Runesmith - Level 5 -->
+<div class="skill-card" data-class="Runesmith" data-level="5">
+    <h3>Runesmith - Level 5</h3>
+    <p><strong>Ultimate Rune:</strong> Add 5d10 damage of any element to an attack.</p>
+    <p><strong>Rune of Protection:</strong> Grant immunity to a single damage type for 1 minute.</p>
+    <p><strong>Runic Explosion:</strong> Deal 6d12 damage to all enemies in a 30-foot radius.</p>
+</div>
+
+
+    <script>
+        // JavaScript to filter by class and level
+        document.getElementById('class-filter').addEventListener('change', filterSkills);
+        document.getElementById('level-filter').addEventListener('change', filterSkills);
+
+        function filterSkills() {
+            let selectedClass = document.getElementById('class-filter').value;
+            let selectedLevel = document.getElementById('level-filter').value;
+
+            let skills = document.querySelectorAll('.skill-card');
+            skills.forEach(skill => {
+                let classMatch = selectedClass === 'all' || skill.getAttribute('data-class') === selectedClass;
+                let levelMatch = selectedLevel === 'all' || skill.getAttribute('data-level') === selectedLevel;
+
+                if (classMatch && levelMatch) {
+                    skill.style.display = 'block';
+                } else {
+                    skill.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

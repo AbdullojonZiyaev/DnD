@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <style>
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            padding: 50px 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .classes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .class-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .class-card h3 {
+            margin-top: 0;
+        }
+        .show-more {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            width: 500px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .modal-content h3 {
+            margin-top: 0;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .class-card img{
+            width: 100%;
+        }
+    </style>
+</head>
+<header>
+    <div class="logo">Game Builder</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Races</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="./skills/skills.html">Skills</a></li>
+            <li><a href="mechanics.html">Mechanics</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="classes-container">
+        <!-- Class Card 1 -->
+        <div class="class-card">
+            <img src="./images/classes/Blademaster.jpeg" alt="">
+            <h3>Blademaster</h3>
+            <p>Experts in melee combat, capable of extraordinary feats with swords and similar weapons.</p>
+            <button class="show-more" onclick="showModal('blademaster')">Show More</button>
+        </div>
+        <!-- Class Card 2 -->
+        <div class="class-card">
+            <img src="./images/classes/Ranger.jpeg" alt="">
+            <h3>Ranger</h3>
+            <p>Masters of ranged and close combat, excelling in natural environments.</p>
+            <button class="show-more" onclick="showModal('ranger')">Show More</button>
+        </div>
+        <!-- Class Card 3 -->
+        <div class="class-card">
+            <img src="./images/classes/Barbarian.jpeg" alt="">
+            <h3>Barbarian</h3>
+            <p>Ferocious warriors who unleash their primal rage in battle.</p>
+            <button class="show-more" onclick="showModal('barbarian')">Show More</button>
+        </div>
+        <!-- Class Card 4 -->
+        <div class="class-card">
+            <img src="./images/classes/Duelist.jpeg" alt="">
+            <h3>Duelist</h3>
+            <p>Agile fighters focused on precision and finesse in one-on-one combat.</p>
+            <button class="show-more" onclick="showModal('duelist')">Show More</button>
+        </div>
+        <!-- Class Card 5 -->
+        <div class="class-card">
+            <img src="./images/classes/Berserker.jpeg" alt="">
+            <h3>Berserker</h3>
+            <p>Relentless warriors who rely on overwhelming strength to crush their enemies.</p>
+            <button class="show-more" onclick="showModal('berserker')">Show More</button>
+        </div>
+        <!-- Class Card 1 -->
+    <div class="class-card">
+        <img src="./images/classes/Elementalist.jpeg" alt="">
+        <h3>Elementalist</h3>
+        <p>Masters of elemental forces, wielding fire, water, earth, and air to devastate enemies or aid allies.</p>
+        <button class="show-more" onclick="showModal('elementalist')">Show More</button>
+    </div>
+    <!-- Class Card 2 -->
+    <div class="class-card">
+        <img src="./images/classes/Necromancer.jpeg" alt="">
+        <h3>Necromancer</h3>
+        <p>Masters of death and decay, summoning undead minions and draining life from enemies.</p>
+        <button class="show-more" onclick="showModal('necromancer')">Show More</button>
+    </div>
+    <!-- Class Card 3 -->
+    <div class="class-card">
+        <img src="./images/classes/Sorcerer.jpeg" alt="">
+        <h3>Sorcerer</h3>
+        <p>Natural-born magic wielders with immense power and versatility.</p>
+        <button class="show-more" onclick="showModal('sorcerer')">Show More</button>
+    </div>
+    <!-- Class Card 4 -->
+    <div class="class-card">
+        <img src="./images/classes/Illusionist.jpeg" alt="">
+        <h3>Illusionist</h3>
+        <p>Manipulators of reality, specializing in creating illusions to confuse or control enemies.</p>
+        <button class="show-more" onclick="showModal('illusionist')">Show More</button>
+    </div>
+    <!-- Class Card 5 -->
+    <div class="class-card">
+        <img src="./images/classes/ArcaneKnight.jpeg" alt="">
+        <h3>Arcane Knight</h3>
+        <p>Warriors who combine martial prowess with arcane magic to dominate the battlefield.</p>
+        <button class="show-more" onclick="showModal('arcane-knight')">Show More</button>
+    </div>
+    <!-- Class Card 1 -->
+    <div class="class-card">
+        <img src="./images/classes/Shieldbearer.jpeg" alt="">
+        <h3>Shieldbearer</h3>
+        <p>Masters of defense, specializing in protecting allies and enduring damage.</p>
+        <button class="show-more" onclick="showModal('shieldbearer')">Show More</button>
+    </div>
+    <!-- Class Card 2 -->
+    <div class="class-card">
+        <img src="./images/classes/Warden.jpeg" alt="">
+        <h3>Warden</h3>
+        <p>Nature’s protectors, combining endurance with natural magic to shield allies and control the battlefield.</p>
+        <button class="show-more" onclick="showModal('warden')">Show More</button>
+    </div>
+    <!-- Class Card 3 -->
+    <div class="class-card">
+        <img src="./images/classes/Ironclad.jpeg" alt="">
+        <h3>Ironclad</h3>
+        <p>Heavily armored juggernauts who excel at soaking up damage and holding the line.</p>
+        <button class="show-more" onclick="showModal('ironclad')">Show More</button>
+    </div>
+    <!-- Class Card 4 -->
+    <div class="class-card">
+        <img src="./images/classes/Sentinel.jpeg" alt="">
+        <h3>Sentinel</h3>
+        <p>Masters of vigilance, combining defensive tactics with precise counterattacks.</p>
+        <button class="show-more" onclick="showModal('sentinel')">Show More</button>
+    </div>
+    <!-- Class Card 5 -->
+    <div class="class-card">
+        <img src="./images/classes/BloodKnight.jpeg" alt="">
+        <h3>Blood Knight</h3>
+        <p>Warriors who use their vitality as a resource, converting damage taken into strength.</p>
+        <button class="show-more" onclick="showModal('bloodknight')">Show More</button>
+    </div>
+    <!-- Class Cards Section -->
+<div class="class-card">
+    <img src="./images/classes/Chronomancer.jpeg" alt="Chronomancer">
+    <h3>Chronomancer</h3>
+    <p>Manipulators of time who alter the flow of combat, speeding up allies or slowing enemies.</p>
+    <button class="show-more" onclick="showModal('chronomancer')">Show More</button>
+</div>
+
+<div class="class-card">
+    <img src="./images/classes/Spellblade.jpeg" alt="Spellblade">
+    <h3>Spellblade</h3>
+    <p>Warriors who seamlessly combine melee combat with powerful arcane magic.</p>
+    <button class="show-more" onclick="showModal('spellblade')">Show More</button>
+</div>
+
+<div class="class-card">
+    <img src="./images/classes/Phantom.jpeg" alt="Phantom">
+    <h3>Phantom</h3>
+    <p>Masters of stealth and shadows, using illusions and spectral abilities to outwit foes.</p>
+    <button class="show-more" onclick="showModal('phantom')">Show More</button>
+</div>
+
+<div class="class-card">
+    <img src="./images/classes/Soulbinder.jpeg" alt="Soulbinder">
+    <h3>Soulbinder</h3>
+    <p>Manipulators of life and death who form bonds with spirits to empower their abilities.</p>
+    <button class="show-more" onclick="showModal('soulbinder')">Show More</button>
+</div>
+
+<div class="class-card">
+    <img src="./images/classes/Runesmith.jpeg" alt="Runesmith">
+    <h3>Runesmith</h3>
+    <p>Artisans of ancient magic, empowering their weapons and allies with rune-engraved abilities.</p>
+    <button class="show-more" onclick="showModal('runesmith')">Show More</button>
+</div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-blademaster" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('blademaster')">&times;</span>
+            <h2>Blademaster</h2>
+            <p>Experts in melee combat, capable of extraordinary feats with swords and similar weapons.</p>
+            <p><strong>Requirements:</strong> Minimum Strength 12.</p>
+            <p><strong>Bonuses:</strong> +2 Strength, +1 Dexterity.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Weapon Specialization: +2 damage when using swords.</li>
+                <li>Parry: Once per short rest, reduce incoming melee damage by half.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Power Slash, Riposte, Weapon Throw.</li>
+                <li><strong>Level 2:</strong> Blade Dance, Weapon Mastery, Momentum.</li>
+                <li><strong>Level 3:</strong> Sweeping Strike, Disarm, Focus.</li>
+                <li><strong>Level 4:</strong> Armor Breaker, Counter Strike, Bloodlust.</li>
+                <li><strong>Level 5:</strong> Blade Flurry, Perfect Parry, Savage Strike.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-ranger" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('ranger')">&times;</span>
+            <h2>Ranger</h2>
+            <p>Masters of ranged and close combat, excelling in natural environments.</p>
+            <p><strong>Requirements:</strong> Minimum Dexterity 12.</p>
+            <p><strong>Bonuses:</strong> +2 Dexterity, +1 Wisdom.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Hunter's Mark: Mark a target to deal an extra 1d6 damage once per turn.</li>
+                <li>Track: Advantage on survival checks to track creatures.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Precise Shot, Quick Draw, Camouflage.</li>
+                <li><strong>Level 2:</strong> Rapid Shot, Entangling Shot, Hunter's Reflex.</li>
+                <li><strong>Level 3:</strong> Multi-Shot, Trap Expert, Beast Whisperer.</li>
+                <li><strong>Level 4:</strong> Volley, Evasion, Deadly Aim.</li>
+                <li><strong>Level 5:</strong> Arrow Storm, Lethal Shot, Predator's Strike.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-barbarian" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('barbarian')">&times;</span>
+            <h2>Barbarian</h2>
+            <p>Ferocious warriors who unleash their primal rage in battle.</p>
+            <p><strong>Requirements:</strong> Minimum Strength 12 and Constitution 12.</p>
+            <p><strong>Bonuses:</strong> +2 Strength, +1 Constitution.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Rage: Enter a rage to gain +2 damage and resistance to physical damage for 1 minute.</li>
+                <li>Unarmored Defense: Add Constitution modifier to AC when not wearing heavy armor.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Reckless Attack, Charge, Feral Roar.</li>
+                <li><strong>Level 2:</strong> Brutal Strike, Survival Instinct, Adrenaline Surge.</li>
+                <li><strong>Level 3:</strong> Cleave, Roaring Charge, Enduring Rage.</li>
+                <li><strong>Level 4:</strong> Resilient Body, Crushing Blow, Savage Leap.</li>
+                <li><strong>Level 5:</strong> Unstoppable Force, Titan’s Grip, Relentless Fury.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-duelist" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('duelist')">&times;</span>
+            <h2>Duelist</h2>
+            <p>Agile fighters focused on precision and finesse in one-on-one combat.</p>
+            <p><strong>Requirements:</strong> Minimum Dexterity 12.</p>
+            <p><strong>Bonuses:</strong> +2 Dexterity, +1 Charisma.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Agile Strike: Add Dexterity modifier instead of Strength for melee damage.</li>
+                <li>Riposte Mastery: Automatically counter a missed melee attack for 1d6 damage.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Precision Strike, Feint, Quick Reflexes.</li>
+                <li><strong>Level 2:</strong> Disarm Strike, Evasive Maneuver, Lunging Attack.</li>
+                <li><strong>Level 3:</strong> Blade Flick, Parrying Stance, Dazzling Strike.</li>
+                <li><strong>Level 4:</strong> Counter Parry, Pinpoint Weakness, Flourish.</li>
+                <li><strong>Level 5:</strong> Rapid Strikes, Master Duelist, Shadowstep.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-berserker" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('berserker')">&times;</span>
+            <h2>Berserker</h2>
+            <p>Relentless warriors who rely on overwhelming strength to crush their enemies.</p>
+            <p><strong>Requirements:</strong> Minimum Strength 14.</p>
+            <p><strong>Bonuses:</strong> +3 Strength.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Frenzy: Gain an extra melee attack per turn while in a frenzy.</li>
+                <li>Iron Will: Reduce fear and charm effects.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Frenzied Strike, Battle Roar, Charge Slam.</li>
+                <li><strong>Level 2:</strong> Reckless Frenzy, Thick Skin, Headbutt.</li>
+                <li><strong>Level 3:</strong> Overpower, Crushing Grip, Howl of Fury.</li>
+                <li><strong>Level 4:</strong> Bone Crusher, Endless Frenzy, Mighty Leap.</li>
+                <li><strong>Level 5:</strong> Unyielding Rage, Pulverize, Furious Retaliation.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal-elementalist" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('elementalist')">&times;</span>
+            <h2>Elementalist</h2>
+            <p>Masters of elemental forces, wielding fire, water, earth, and air to devastate enemies or aid allies.</p>
+            <p><strong>Requirements:</strong> Minimum Intelligence 12.</p>
+            <p><strong>Bonuses:</strong> +2 Intelligence, +1 Wisdom.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Elemental Affinity: Choose an element (fire, water, earth, or air) to deal an extra 1d4 damage of that type.</li>
+                <li>Elemental Resistance: Halve damage from your chosen element.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Fire Bolt, Stone Shield, Wind Push.</li>
+                <li><strong>Level 2:</strong> Flame Wave, Water Surge, Quake.</li>
+                <li><strong>Level 3:</strong> Inferno Blast, Hurricane, Earth Spike.</li>
+                <li><strong>Level 4:</strong> Elemental Form, Frost Nova, Volcanic Eruption.</li>
+                <li><strong>Level 5:</strong> Stormcall, Tsunami, Mountain’s Fury.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="modal-necromancer" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('necromancer')">&times;</span>
+            <h2>Necromancer</h2>
+            <p>Masters of death and decay, summoning undead minions and draining life from enemies.</p>
+            <p><strong>Requirements:</strong> Minimum Intelligence 12.</p>
+            <p><strong>Bonuses:</strong> +2 Intelligence, +1 Charisma.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Undead Servant: Summon a skeletal minion for combat.</li>
+                <li>Soul Drain: Recover 1d4 HP whenever you kill an enemy.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Drain Life, Bone Wall, Raise Skeleton.</li>
+                <li><strong>Level 2:</strong> Dark Pact, Death’s Grasp, Plague Aura.</li>
+                <li><strong>Level 3:</strong> Wailing Spirits, Bone Spear, Soul Shield.</li>
+                <li><strong>Level 4:</strong> Army of the Dead, Death’s Mark, Wither.</li>
+                <li><strong>Level 5:</strong> Lich Form, Corpse Explosion, Soul Harvest.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="modal-sorcerer" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('sorcerer')">&times;</span>
+            <h2>Sorcerer</h2>
+            <p>Natural-born magic wielders with immense power and versatility.</p>
+            <p><strong>Requirements:</strong> Minimum Charisma 12.</p>
+            <p><strong>Bonuses:</strong> +2 Charisma, +1 Constitution.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Arcane Overflow: Gain an extra spell slot per day.</li>
+                <li>Wild Magic: Occasionally trigger random magical effects.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Magic Missile, Shield, Burning Hands.</li>
+                <li><strong>Level 2:</strong> Mirror Image, Arcane Blast, Blink.</li>
+                <li><strong>Level 3:</strong> Fireball, Counterspell, Teleportation Circle.</li>
+                <li><strong>Level 4:</strong> Mana Shield, Frostbolt, Lightning Arc.</li>
+                <li><strong>Level 5:</strong> Meteor Storm, Time Stop, Arcane Mastery.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="modal-illusionist" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('illusionist')">&times;</span>
+            <h2>Illusionist</h2>
+            <p>Manipulators of reality, specializing in creating illusions to confuse or control enemies.</p>
+            <p><strong>Requirements:</strong> Minimum Intelligence 12.</p>
+            <p><strong>Bonuses:</strong> +2 Intelligence, +1 Charisma.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Mind Shield: Advantage on saving throws against psychic damage.</li>
+                <li>Reality Bend: Once per day, reroll a failed saving throw.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Minor Illusion, Blur, Dazzle.</li>
+                <li><strong>Level 2:</strong> Mirror Image, Phantasmal Force, Disguise Self.</li>
+                <li><strong>Level 3:</strong> Mass Hallucination, Invisibility, Illusory Terrain.</li>
+                <li><strong>Level 4:</strong> Shadow Bind, Clone Image, Mind Twist.</li>
+                <li><strong>Level 5:</strong> Reality Warp, True Illusion, Mind Erase.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="modal-arcane-knight" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('arcane-knight')">&times;</span>
+            <h2>Arcane Knight</h2>
+            <p>Warriors who combine martial prowess with arcane magic to dominate the battlefield.</p>
+            <p><strong>Requirements:</strong> Minimum Strength 10 and Intelligence 12.</p>
+            <p><strong>Bonuses:</strong> +1 Strength, +1 Intelligence, +1 Constitution.</p>
+            <p><strong>Perks:</strong></p>
+            <ul>
+                <li>Arcane Strike: Add 1d6 magical damage to melee attacks.</li>
+                <li>Magic Ward: Gain +2 AC for 1 minute once per long rest.</li>
+            </ul>
+            <p><strong>Skills/Spells by Level:</strong></p>
+            <ul>
+                <li><strong>Level 1:</strong> Enchanted Blade, Magic Shield, Force Wave.</li>
+                <li><strong>Level 2:</strong> Blink Strike, Arcane Armor, Mana Blade.</li>
+                <li><strong>Level 3:</strong> Spellbreaker, Radiant Slash, Mana Surge.</li>
+                <li><strong>Level 4:</strong> Elemental Weapon, Counter Ward, Magic Leap.</li>
+                <li><strong>Level 5:</strong> Arcane Fury, Void Slash, Ethereal Guard.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Modals -->
+<div id="modal-shieldbearer" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('shieldbearer')">&times;</span>
+        <h2>Shieldbearer</h2>
+        <p>Masters of defense, specializing in protecting allies and enduring damage.</p>
+        <p><strong>Requirements:</strong> Minimum Constitution 12 and Strength 10.</p>
+        <p><strong>Bonuses:</strong> +2 Constitution, +1 Strength.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Shield Wall: Add +2 AC when wielding a shield.</li>
+            <li>Protector: Once per turn, redirect an attack meant for an adjacent ally.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Shield Bash, Fortify, Taunt.</li>
+            <li><strong>Level 2:</strong> Defensive Stance, Guardian's Grit, Shield Toss.</li>
+            <li><strong>Level 3:</strong> Shield Slam, Iron Will, Cover Ally.</li>
+            <li><strong>Level 4:</strong> Reflective Shield, Bastion, Indomitable.</li>
+            <li><strong>Level 5:</strong> Unbreakable Wall, Shattering Slam, Ultimate Taunt.</li>
+        </ul>
+    </div>
+</div>
+<div id="modal-warden" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('warden')">&times;</span>
+        <h2>Warden</h2>
+        <p>Nature’s protectors, combining endurance with natural magic to shield allies and control the battlefield.</p>
+        <p><strong>Requirements:</strong> Minimum Constitution 12 and Wisdom 10.</p>
+        <p><strong>Bonuses:</strong> +2 Constitution, +1 Wisdom.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Natural Fortitude: Regain 1d6 HP per turn while in natural terrain.</li>
+            <li>Guardian Aura: Allies within 5 feet take half damage from area-of-effect attacks.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Vine Snare, Stone Skin, Roots of the Earth.</li>
+            <li><strong>Level 2:</strong> Verdant Heal, Entangle, Thorn Shield.</li>
+            <li><strong>Level 3:</strong> Bark Armor, Earthquake Stomp, Nature's Wrath.</li>
+            <li><strong>Level 4:</strong> Healing Pulse, Living Fortress, Spiked Growth.</li>
+            <li><strong>Level 5:</strong> Nature’s Guardian, Stone Pillar, Life Surge.</li>
+        </ul>
+    </div>
+</div>
+<div id="modal-ironclad" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('ironclad')">&times;</span>
+        <h2>Ironclad</h2>
+        <p>Heavily armored juggernauts who excel at soaking up damage and holding the line.</p>
+        <p><strong>Requirements:</strong> Minimum Strength 12 and Constitution 12.</p>
+        <p><strong>Bonuses:</strong> +2 Strength, +1 Constitution.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Heavy Plating: Gain +1 AC when wearing heavy armor.</li>
+            <li>Unyielding Stance: Halve all damage while standing still.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Steel Strike, Brace, War Cry.</li>
+            <li><strong>Level 2:</strong> Iron Grip, Deflect, Unstoppable Charge.</li>
+            <li><strong>Level 3:</strong> Battle Stance, Earth Shatter, Resilient Body.</li>
+            <li><strong>Level 4:</strong> Fortress Stance, Hammer Strike, Hold the Line.</li>
+            <li><strong>Level 5:</strong> Immortal Resolve, Titan Slam, Ultimate Defense.</li>
+        </ul>
+    </div>
+</div>
+<div id="modal-sentinel" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('sentinel')">&times;</span>
+        <h2>Sentinel</h2>
+        <p>Masters of vigilance, combining defensive tactics with precise counterattacks.</p>
+        <p><strong>Requirements:</strong> Minimum Dexterity 10 and Constitution 12.</p>
+        <p><strong>Bonuses:</strong> +2 Constitution, +1 Dexterity.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Sentinel’s Mark: Attack enemies who hit your allies.</li>
+            <li>Watchful Eye: Gain advantage on perception checks.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Overwatch, Deflect Blow, Hold Position.</li>
+            <li><strong>Level 2:</strong> Intercept, Trap Set, Reactive Strike.</li>
+            <li><strong>Level 3:</strong> Guardian Stance, Leg Sweep, Focused Guard.</li>
+            <li><strong>Level 4:</strong> Sentinel's Resolve, Disarming Strike, Zone Control.</li>
+            <li><strong>Level 5:</strong> Immovable Stance, Crippling Blow, Unyielding Protector.</li>
+        </ul>
+    </div>
+</div>
+<div id="modal-bloodknight" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('bloodknight')">&times;</span>
+        <h2>Blood Knight</h2>
+        <p>Warriors who use their vitality as a resource, converting damage taken into strength.</p>
+        <p><strong>Requirements:</strong> Minimum Constitution 12.</p>
+        <p><strong>Bonuses:</strong> +2 Constitution, +1 Strength.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Blood Fury: Gain +1 damage for every 5 HP missing.</li>
+            <li>Lifeblood: Regain 1d6 HP whenever you deal a critical hit.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Sanguine Strike, Crimson Shield, Bloodletting.</li>
+            <li><strong>Level 2:</strong> Vampiric Aura, Blood Pact, Rage of the Wounded.</li>
+            <li><strong>Level 3:</strong> Hemorrhage, Crimson Chains, Unyielding Vitality.</li>
+            <li><strong>Level 4:</strong> Blood Surge, Crimson Vortex, Sanguine Bond.</li>
+            <li><strong>Level 5:</strong> Reaper's Strike, Blood Armor, Vampiric Rebirth.</li>
+        </ul>
+    </div>
+</div>
+<div id="modal-chronomancer" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('chronomancer')">&times;</span>
+        <h2>Chronomancer</h2>
+        <p>Manipulators of time who alter the flow of combat, speeding up allies or slowing enemies.</p>
+        <p><strong>Requirements:</strong> Minimum Intelligence 12 and Wisdom 10.</p>
+        <p><strong>Bonuses:</strong> +2 Intelligence, +1 Wisdom.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Temporal Awareness: Gain +1 reaction per turn.</li>
+            <li>Timewalker: Once per day, reset your turn after taking an action.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Hasten, Time Lock, Rewind</li>
+            <li><strong>Level 2:</strong> Temporal Shield, Slow Field, Time Echo</li>
+            <li><strong>Level 3:</strong> Chrono Blade, Frozen Moment, Accelerate</li>
+            <li><strong>Level 4:</strong> Time Bubble, Temporal Surge, Reversal</li>
+            <li><strong>Level 5:</strong> Stop Time, Paradox, Timelord's Wrath</li>
+        </ul>
+    </div>
+</div>
+
+<div id="modal-spellblade" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('spellblade')">&times;</span>
+        <h2>Spellblade</h2>
+        <p>Warriors who seamlessly combine melee combat with powerful arcane magic.</p>
+        <p><strong>Requirements:</strong> Minimum Strength 10 and Intelligence 12.</p>
+        <p><strong>Bonuses:</strong> +1 Strength, +2 Intelligence.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Arcane Infusion: Add 1d6 elemental damage to melee attacks.</li>
+            <li>Mystic Defense: Gain +2 AC against ranged magic attacks.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Flame Slash, Mana Shield, Arcane Leap</li>
+            <li><strong>Level 2:</strong> Frost Blade, Eldritch Charge, Elemental Burst</li>
+            <li><strong>Level 3:</strong> Thunder Strike, Blade Storm, Mystic Parry</li>
+            <li><strong>Level 4:</strong> Arcane Counter, Ethereal Form, Runic Empowerment</li>
+            <li><strong>Level 5:</strong> Celestial Slash, Dimensional Rift, Ultimate Infusion</li>
+        </ul>
+    </div>
+</div>
+
+<div id="modal-phantom" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('phantom')">&times;</span>
+        <h2>Phantom</h2>
+        <p>Masters of stealth and shadows, using illusions and spectral abilities to outwit foes.</p>
+        <p><strong>Requirements:</strong> Minimum Dexterity 12 and Charisma 10.</p>
+        <p><strong>Bonuses:</strong> +2 Dexterity, +1 Charisma.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Shadow Step: Teleport up to 30 feet in dim light or darkness.</li>
+            <li>Spectral Form: Pass through walls or obstacles for 1 turn.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Shadow Strike, Phantom Veil, Spectral Blade</li>
+            <li><strong>Level 2:</strong> Vanishing Step, Ghostly Grasp, Haunting Presence</li>
+            <li><strong>Level 3:</strong> Shadow Clone, Nightmare Slash, Ethereal Dash</li>
+            <li><strong>Level 4:</strong> Spectral Barrage, Cloak of Darkness, Phantom Evasion</li>
+            <li><strong>Level 5:</strong> Wraith Form, Spectral Army, Nightfall</li>
+        </ul>
+    </div>
+</div>
+
+<div id="modal-soulbinder" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('soulbinder')">&times;</span>
+        <h2>Soulbinder</h2>
+        <p>Manipulators of life and death who form bonds with spirits to empower their abilities.</p>
+        <p><strong>Requirements:</strong> Minimum Wisdom 12 and Constitution 10.</p>
+        <p><strong>Bonuses:</strong> +2 Wisdom, +1 Constitution.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Spirit Bond: Summon a spirit ally for 1 minute.</li>
+            <li>Ethereal Resilience: Gain resistance to necrotic and radiant damage.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Soul Drain, Spirit Shield, Binding Grasp</li>
+            <li><strong>Level 2:</strong> Spectral Ally, Wail of the Lost, Soul Bond</li>
+            <li><strong>Level 3:</strong> Necrotic Wave, Spirit Ward, Revive Spirit</li>
+            <li><strong>Level 4:</strong> Phantom Army, Life Syphon, Spectral Anchor</li>
+            <li><strong>Level 5:</strong> Soul Reaver, Spirit Realm, Eternal Bond</li>
+        </ul>
+    </div>
+</div>
+
+<div id="modal-runesmith" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('runesmith')">&times;</span>
+        <h2>Runesmith</h2>
+        <p>Artisans of ancient magic, empowering their weapons and allies with rune-engraved abilities.</p>
+        <p><strong>Requirements:</strong> Minimum Intelligence 12 and Strength 10.</p>
+        <p><strong>Bonuses:</strong> +2 Intelligence, +1 Strength.</p>
+        <p><strong>Perks:</strong></p>
+        <ul>
+            <li>Runic Mastery: Add +2 to attack rolls with rune-engraved weapons.</li>
+            <li>Empower Ally: Grant an ally +1 to attack rolls for 1 turn.</li>
+        </ul>
+        <p><strong>Skills/Spells by Level:</strong></p>
+        <ul>
+            <li><strong>Level 1:</strong> Flame Rune, Ward Rune, Explosive Glyph</li>
+            <li><strong>Level 2:</strong> Ice Rune, Runic Pulse, Lightning Glyph</li>
+            <li><strong>Level 3:</strong> Empowered Weapon, Rune Barrier, Shatter Glyph</li>
+            <li><strong>Level 4:</strong> Greater Flame Rune, Runic Ward, Chain Rune</li>
+            <li><strong>Level 5:</strong> Ultimate Rune, Rune of Protection, Runic Explosion</li>
+        </ul>
+    </div>
+</div>
+    <script>
+        function showModal(className) {
+            document.getElementById(`modal-${className}`).style.display = "flex";
+        }
+        function closeModal(className) {
+            document.getElementById(`modal-${className}`).style.display = "none";
+        }
+    </script>
+</body>
+</html>

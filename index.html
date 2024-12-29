@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Lite</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            padding: 50px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Game Builder</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Races</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="monsters.html">Monsters</a></li>
+                <li><a href="mechanics.html">Mechanics</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="races">
+            <div class="card-container">
+                <div class="card">
+                    <h3>Skyrin (Skyfolk)</h3>
+                    <img src="./images/Skyfolk.jpeg" alt="">
+                    <p><strong>Description:</strong> Ethereal beings with feathered wings, hailing from floating cities in the clouds. They excel in agility and aerial combat.</p>
+                    <p><strong>Requirements:</strong> None.</p>
+                    <p><strong>Bonuses:</strong> +2 Dexterity, +1 Wisdom.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Flight:</strong> Can fly up to 30 feet per turn.</li>
+                            <li><strong>Keen Eyes:</strong> Advantage on perception checks related to sight.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Glide:</strong> Reduce fall damage by half.</li>
+                            <li><strong>Wind Whisper:</strong> Communicate basic ideas with nearby creatures via subtle wind currents.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Emberkin</h3>
+                    <img src="./images/Emberfolk.jpeg" alt="">
+                    <p><strong>Description:</strong> Fire-infused humanoids born in volcanic regions, with glowing eyes and ember-like skin.</p>
+                    <p><strong>Requirements:</strong> Cannot be aligned with water-based deities.</p>
+                    <p><strong>Bonuses:</strong> +2 Strength, +1 Charisma.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Fire Resistance:</strong> Halve damage from fire-based attacks.</li>
+                            <li><strong>Heat Aura:</strong> Small creatures that touch you take 1 fire damage.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Flame Burst:</strong> Emit a small flame, dealing 1d6 fire damage to enemies in a 5-foot radius.</li>
+                            <li><strong>Ignite:</strong> Light a flammable object or area within touch.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Frostborn</h3>
+                    <img src="./images/frostkin.jpeg" alt="">
+                    <p><strong>Description:</strong> Hardy creatures from icy tundras with a natural affinity for frost and survival.</p>
+                    <p><strong>Requirements:</strong> Cannot be aligned with fire-based deities.</p>
+                    <p><strong>Bonuses:</strong> +2 Constitution, +1 Intelligence.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Cold Resistance:</strong> Halve damage from cold-based attacks.</li>
+                            <li><strong>Frostbite Touch:</strong> Enemies you strike in melee combat have their movement halved for 1 turn.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Ice Shard:</strong> Launch a small shard of ice, dealing 1d8 cold damage.</li>
+                            <li><strong>Survivalist:</strong> Gain proficiency in survival-related tasks.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Stonekin</h3>
+                    <img src="./images/StoneKin.jpeg" alt="">
+                    <p><strong>Description:</strong> Sturdy beings carved from ancient stone, often serving as protectors of sacred sites.</p>
+                    <p><strong>Requirements:</strong> None.</p>
+                    <p><strong>Bonuses:</strong> +2 Strength, +1 Constitution.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Natural Armor:</strong> Base AC is 13 without armor.</li>
+                            <li><strong>Immovable:</strong> Advantage on saving throws against being pushed or knocked prone.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Earthquake Stomp:</strong> Shake the ground in a 5-foot radius, knocking enemies prone.</li>
+                            <li><strong>Stone Meld:</strong> Blend into rocky terrain for stealth.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Shadowkin</h3>
+                    <img src="./images/Shadowlin.jpeg" alt="">
+                    <p><strong>Description:</strong> Mysterious beings born of shadow, adept at stealth and subterfuge.</p>
+                    <p><strong>Requirements:</strong> None.</p>
+                    <p><strong>Bonuses:</strong> +2 Dexterity, +1 Charisma.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Darkvision:</strong> See in darkness up to 60 feet.</li>
+                            <li><strong>Shadow Step:</strong> Teleport up to 15 feet in dim light or darkness.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Silent Movement:</strong> Gain proficiency in stealth.</li>
+                            <li><strong>Shadow Veil:</strong> Create a 5-foot sphere of magical darkness.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Celestian</h3>
+                    <img src="./images/celestian.jpg" alt="">
+                    <p><strong>Description:</strong> Radiant beings of divine light, often seen as emissaries of gods.</p>
+                    <p><strong>Requirements:</strong> Cannot have evil alignment.</p>
+                    <p><strong>Bonuses:</strong> +2 Wisdom, +1 Charisma.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Healing Light:</strong> Heal 1d6 HP as a bonus action.</li>
+                            <li><strong>Radiant Resistance:</strong> Halve damage from radiant attacks.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Lightbeam:</strong> Emit a beam of light, dealing 1d8 radiant damage.</li>
+                            <li><strong>Holy Aura:</strong> Allies within 5 feet gain +1 to saving throws.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Deepkin</h3>
+                    <img src="./images/deepwaterkin.jpeg" alt="">
+                    <p><strong>Description:</strong> Amphibious humanoids who dwell in underwater cities, excelling in aquatic combat.</p>
+                    <p><strong>Requirements:</strong> Cannot be aligned with fire-based deities.</p>
+                    <p><strong>Bonuses:</strong> +2 Dexterity, +1 Constitution.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Amphibious:</strong> Can breathe both air and water.</li>
+                            <li><strong>Swim Speed:</strong> Swim at 30 feet per turn.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Water Bolt:</strong> Launch a bolt of water, dealing 1d6 damage.</li>
+                            <li><strong>Tidal Push:</strong> Push enemies 5 feet away in water.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Ironblood</h3>
+                    <img src="./images/ironblood.jpeg" alt="">
+                    <p><strong>Description:</strong> Metallic-skinned beings with unparalleled durability, forged in the heart of mountains.</p>
+                    <p><strong>Requirements:</strong> None.</p>
+                    <p><strong>Bonuses:</strong> +2 Constitution, +1 Strength.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Metallic Resilience:</strong> Advantage on saving throws against poison.</li>
+                            <li><strong>Iron Grip:</strong> Cannot be disarmed.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Armor Bond:</strong> Gain +1 AC when wearing metal armor.</li>
+                            <li><strong>Metal Sense:</strong> Detect nearby metals within 15 feet.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Greensoul</h3>
+                    <img src="./images/Greensoul.jpeg" alt="">
+                    <p><strong>Description:</strong> Plant-like humanoids connected to nature, flourishing in forests and jungles.</p>
+                    <p><strong>Requirements:</strong> Cannot have destructive tendencies toward nature.</p>
+                    <p><strong>Bonuses:</strong> +2 Wisdom, +1 Dexterity.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Photosynthesis:</strong> Regain 1 HP during short rests in sunlight.</li>
+                            <li><strong>Thorn Skin:</strong> Enemies who hit you with melee attacks take 1 piercing damage.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Entangle:</strong> Trap enemies in a 10-foot radius with vines.</li>
+                            <li><strong>Herbal Knowledge:</strong> Identify and use plants for healing.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Voidling</h3>
+                    <img src="./images/Voidkin.jpeg" alt="">
+                    <p><strong>Description:</strong> Enigmatic beings touched by the void, wielding strange and unpredictable powers.</p>
+                    <p><strong>Requirements:</strong> None.</p>
+                    <p><strong>Bonuses:</strong> +2 Intelligence, +1 Dexterity.</p>
+                    <p><strong>Perks:</strong>
+                        <ul>
+                            <li><strong>Void Resistance:</strong> Halve damage from psychic attacks.</li>
+                            <li><strong>Chaotic Aura:</strong> Random beneficial effect occurs once per long rest.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Initial Skills:</strong>
+                        <ul>
+                            <li><strong>Warp Step:</strong> Teleport up to 10 feet.</li>
+                            <li><strong>Void Bolt:</strong> Deal 1d8 psychic damage to a single target.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Created for DnD Lite adventures.</p>
+    </footer>
+</body>
+</html>
