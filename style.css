@@ -32,7 +32,7 @@ h2 {
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 5 columns */
-    gap: 1rem; /* Space between cards */
+    gap: 2rem; /* Space between cards */
     margin-top: 1rem;
 }
 
